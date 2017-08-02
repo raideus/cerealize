@@ -316,10 +316,7 @@ def encode(obj: Serializable) -> bytes:
 
 def decode(cls: Serializable, buf) -> Tuple[Any, bytes]:
     """
-    Decode a bytestream as
-    :param cls:
-    :param buf:
-    :return:
+    Decode a bytestream into an object of a given Serializable type
     """
     if not _supports_encoding(cls):
         raise Exception('Class does not support decoding')
