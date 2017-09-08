@@ -32,7 +32,7 @@ The equivalent Python class implemented with cerealize would be:
 class Header(SerialClass):
     version = field(serial_type=uint32_t)
     sender = field(serial_type=string_t(12))
-    flag = field(serial_type=boolean)
+    flag = field(serial_type=bool_t)
     checksum = field(serial_type=int64_t)
 ```
 
@@ -42,8 +42,6 @@ class Header(SerialClass):
 Let's say we have a message type *Foo* that we want to represent as a class.  This message has 4 fields *w,x,y,z* with types int16_t\[5\], boolean, int32_t, and a string of at most 12 characters (char\[12\]).  We can declare this message as follows:
 
 ```python
-import 
-
 @serializable
 class Foo:
     w = field(Array(int16_t, 5))
